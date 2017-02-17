@@ -13,7 +13,6 @@
         <!--Do it-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -47,8 +46,10 @@
                     <connections>
                         <outlet property="tableView" destination="9OS-fm-X91" id="EbV-HG-RcL"/>
                         <segue destination="lTN-ju-RKU" kind="show" identifier="addSegue" id="vNY-aI-zh9"/>
+                        <segue destination="08J-d7-jqc" kind="show" identifier="selectTaskSegue" id="7dG-5V-KXl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1017" y="35"/>
         </scene>
@@ -120,6 +121,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHs-Bu-LES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775" y="35"/>
+        </scene>
+        <!--Complete Task View Controller-->
+        <scene sceneID="bLr-hW-ppO">
+            <objects>
+                <viewController id="08J-d7-jqc" customClass="CompleteTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfa-qy-cAG"/>
+                        <viewControllerLayoutGuide type="bottom" id="XkH-2q-fCy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RMR-0p-X33">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnA-Gw-RD7">
+                                <rect key="frame" x="157" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-5w-o9f">
+                                <rect key="frame" x="154" y="144" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="08J-d7-jqc" eventType="touchUpInside" id="E4Y-4y-MOj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EnA-Gw-RD7" firstAttribute="centerX" secondItem="RMR-0p-X33" secondAttribute="centerX" id="FD1-Ek-4Im"/>
+                            <constraint firstItem="xrb-5w-o9f" firstAttribute="centerX" secondItem="RMR-0p-X33" secondAttribute="centerX" id="RGE-GA-wqH"/>
+                            <constraint firstItem="xrb-5w-o9f" firstAttribute="top" secondItem="EnA-Gw-RD7" secondAttribute="bottom" constant="30" id="qZQ-fa-V3x"/>
+                            <constraint firstItem="EnA-Gw-RD7" firstAttribute="top" secondItem="Xfa-qy-cAG" secondAttribute="bottom" constant="20" id="t47-cu-qsz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="EnA-Gw-RD7" id="qdb-XK-7Q9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36s-n1-gol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.5999999999999" y="759.67016491754134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vf7-Wb-nFd">
